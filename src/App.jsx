@@ -33,16 +33,15 @@ function App() {
       </div>
       <div className="container">
         <div className="top">
-          <div className="left">
-            <div className="location">
-              {weather.name ? <p>{weather.name}, {weather.sys.country}</p> : <p>Location</p>}
-            </div>
-            <div className="temp">
-              {weather.main ? <h1>{weather.main.temp.toFixed()}°C</h1> : <h1>0°C</h1>}
-            </div>
-          </div>
-          <div className='description'>
-            {weather.weather ? <p>{weather.weather[0].description}</p> : <p>Clear Sky</p>}
+          <div className="middile">
+              <div className="location">
+                {weather.name ? <p>{weather.name}, {weather.sys.country}</p> : <p>Location</p>}
+              </div>
+              <div className="temp">
+                {weather.main ? <h1>{weather.main.temp.toFixed()}°C</h1> : <h1>0°C</h1>}
+                {weather.weather ? <img src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt="weather icon" /> : <img src="http://openweathermap.org/img/w/01d.png" alt="weather icon" />}
+                {weather.weather ? <p>{weather.weather[0].description}</p> : <p>Weather</p>}
+              </div>
           </div>
         </div>
         <div className="bottom">
