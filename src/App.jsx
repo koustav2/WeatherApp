@@ -35,7 +35,7 @@ function App() {
         <div className="top">
           <div className="left">
             <div className="location">
-              <p>{weather.name},{weather.sys.country}</p>
+              {weather.name ? <p>{weather.name}, {weather.sys.country}</p> : <p>Location</p>}
             </div>
             <div className="temp">
               {weather.main ? <h1>{weather.main.temp.toFixed()}°C</h1> : <h1>0°C</h1>}
